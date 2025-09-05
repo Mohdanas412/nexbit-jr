@@ -16,9 +16,9 @@ export default function ChatBox() {
   const send = (e: React.FormEvent) => {
     e.preventDefault()
     if (!input.trim()) return
-    const next = [...messages, { role: 'user', text: input.trim() }]
-    setMessages(next)
-    setInput('')
+const next: Message[] = [...messages, { role: "user" as const, text: input.trim() }]
+setMessages(next)
+setInput('')
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
