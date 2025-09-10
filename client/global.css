@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .glow-soft { box-shadow: 0 8px 24px hsl(var(--primary) / 0.25); }
+  .glow-gold { box-shadow: 0 0 0 4px hsl(45 98% 51% / 0.2), 0 12px 24px hsl(45 98% 51% / 0.35); }
+  .shine-mask { position: relative; overflow: hidden; }
+  .shine-mask::after { content: ""; position: absolute; inset: -100% -50%; background: linear-gradient(120deg, transparent 40%, #fff6 50%, transparent 60%); animation: shine 3s infinite; }
+}
+
 @layer base {
   /**
    * Tailwind CSS theme
@@ -94,6 +101,18 @@
     --sidebar-border: 217.2 32.6% 17.5%;
     --sidebar-ring: 142 70% 45%;
   }
+
+  /* Fun animations */
+  @keyframes shine { to { transform: translateX(200%); } }
+  @keyframes mascot-wave { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(8deg); } }
+  @keyframes mascot-cheer { 0%,100% { transform: translateY(0); } 30% { transform: translateY(-6px); } 60% { transform: translateY(0); } }
+  @keyframes mascot-sad { 0%,100% { transform: rotate(0) translateY(0); } 50% { transform: rotate(-6deg) translateY(3px); } }
+  @keyframes gradient-move { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+  @keyframes pulse-glow { 0%,100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.5);} 50% { box-shadow: 0 0 0 8px hsl(var(--accent) / 0.0);} }
+
+  .animate-mascot-wave { animation: mascot-wave 1.2s ease-in-out infinite; }
+  .animate-mascot-cheer { animation: mascot-cheer 0.9s ease-in-out infinite; }
+  .animate-mascot-sad { animation: mascot-sad 1.6s ease-in-out infinite; }
 }
 
 @layer base {
@@ -103,5 +122,20 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* XP progress stripe */
+  .xp-stripes {
+    background-image: linear-gradient(
+      45deg,
+      hsl(var(--primary)) 25%,
+      hsl(var(--primary) / .85) 25%,
+      hsl(var(--primary) / .85) 50%,
+      hsl(var(--primary)) 50%,
+      hsl(var(--primary)) 75%,
+      hsl(var(--primary) / .85) 75%,
+      hsl(var(--primary) / .85) 100%
+    );
+    background-size: 24px 24px;
   }
 }
