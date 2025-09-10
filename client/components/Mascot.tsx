@@ -1,10 +1,17 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
-// Nexbit Jr mascot: a friendly spark robot
-export default function Mascot({ className = "w-40 h-40" }: { className?: string }) {
+export type MascotMood = "idle" | "wave" | "cheer" | "sad";
+
+// Nexbie mascot with simple mood animations
+export default function Mascot({ className = "w-40 h-40", mood = "idle" }: { className?: string; mood?: MascotMood }) {
   return (
     <svg
-      className={className}
+      className={cn(className, {
+        "animate-mascot-wave origin-bottom": mood === "wave",
+        "animate-mascot-cheer": mood === "cheer",
+        "animate-mascot-sad": mood === "sad",
+      })}
       viewBox="0 0 220 220"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
