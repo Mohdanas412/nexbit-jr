@@ -3,6 +3,7 @@ import Mascot from "@/components/Mascot";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Confetti from "@/components/animations/Confetti";
+import { playChime } from "@/lib/sfx";
 
 const blocks = ["print(\"Hello\")", "name = input()", "if name:", "  print(name)"];
 
@@ -21,6 +22,7 @@ export default function LearningPage() {
     const ok = JSON.stringify(arr) === JSON.stringify(target);
     setChat([...chat, { role: "assistant", text: ok ? "Great job!" : "Almost there—remember to get input before printing." }]);
     setLessonDone(ok);
+    if (ok) playChime("confetti");
   }
 
   return (
