@@ -2,6 +2,9 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Mascot from "@/components/Mascot";
 import { cn } from "@/lib/utils";
+import { Switch } from "@/components/ui/switch";
+import { isSfxEnabled, setSfxEnabled } from "@/lib/sfx";
+import { useEffect, useState } from "react";
 
 export default function SiteHeader() {
   const location = useLocation();
