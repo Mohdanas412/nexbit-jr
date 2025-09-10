@@ -11,6 +11,9 @@ import NotFound from "./pages/NotFound";
 import RootLayout from "@/components/layout/RootLayout";
 import AuthPage from "@/pages/Auth";
 import Placeholder from "@/pages/Placeholder";
+import Dashboard from "@/pages/Dashboard";
+import LearningPage from "@/pages/Learning";
+import ProfilePage from "@/pages/Profile";
 
 const queryClient = new QueryClient();
 
