@@ -4,8 +4,10 @@ import JourneyBar from "@/components/ui/journey-bar";
 import BadgesCarousel from "@/components/badges/BadgesCarousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { Crown, Sparkles, Users } from "lucide-react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { playChime } from "@/lib/sfx";
 
 function greeting() {
   const h = new Date().getHours();
@@ -21,6 +23,7 @@ export default function Dashboard() {
     { id: "b3", name: "Bug Fixer", unlocked: false },
     { id: "b4", name: "Quiz Master", unlocked: false },
   ], []);
+  const [rankGlow, setRankGlow] = useState(false);
 
   return (
     <section className="container py-10">
@@ -31,19 +34,38 @@ export default function Dashboard() {
           </p>
           <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold">Welcome back to your journey</h1>
         </div>
-        <Mascot className="w-20 h-20" mood="idle" />
+        <Mascot className="w-20 h-20" mood={rankGlow ? "cheer" : "idle"} />
       </div>
 
       <div className="grid md:grid-cols-3 gap-4 mt-6">
-        <Card className="shadow-md">
-          <CardContent className="p-5">
-            <div className="flex items-center justify-between">
-              <p className="font-bold">Streak</p>
-              <StreakPill days={7} />
-            </div>
-            <p className="text-sm text-muted-foreground mt-2">Keep practicing daily to grow your streak!</p>
-          </CardContent>
-        </Card>
+        <AlertDialog>
+          <Card className="shadow-md">
+            <CardContent className="p-5">
+              <div className="flex items-center justify-between">
+                <p className="font-bold">Streak</p>
+                <StreakPill days={7} />
+              </div>
+              <p className="text-sm text-muted-foreground mt-2">Keep practicing daily to grow your streak!</p>
+              <div className="mt-3 flex gap-2">
+                <AlertDialogTrigger asChild>
+                  <Button variant="outline" size="sm">Missed a day?</Button>
+                </AlertDialogTrigger>
+              </div>
+            </CardContent>
+          </Card>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle className="flex items-center gap-2">Streak broken</AlertDialogTitle>
+              <AlertDialogDescription>
+                <div className="flex items-center gap-3 mt-2">
+                  <Mascot className="w-12 h-12" mood="sad" />
+                  <p>Oh no! It happens. Turn on reminders and do a quick mini-lesson to start a new streak.</p>
+                </div>
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogAction onClick={() => { /* close */ }}>Got it</AlertDialogAction>
+          </AlertDialogContent>
+        </AlertDialog>
 
         <Card className="shadow-md md:col-span-2">
           <CardContent className="p-5">
@@ -73,12 +95,15 @@ export default function Dashboard() {
             <div className="mt-3 space-y-2 text-sm">
               {["Aisha", "Leo", "Maya", "You", "Kai"].map((n, i) => (
                 <div key={n} className={`rounded-lg p-2 flex items-center justify-between ${n === "You" ? "bg-primary/10 border border-primary glow-soft" : "bg-muted"}`}>
-                  <span className="font-semibold">#{i + 1} {n}</span>
+                  <span className="font-semibold flex items-center gap-2">#{i + 1} {n} {n === "You" && rankGlow && <Crown className="text-accent animate-crown-glow" />}</span>
                   <span className="text-muted-foreground">{200 - i * 15} XP</span>
                 </div>
               ))}
             </div>
-            <Button className="w-full mt-3" size="sm"><Users className="mr-2" /> See full board</Button>
+            <div className="flex gap-2 mt-3">
+              <Button className="flex-1" size="sm"><Users className="mr-2" /> See full board</Button>
+              <Button variant="outline" size="sm" onClick={() => { setRankGlow(true); playChime("rank"); setTimeout(() => setRankGlow(false), 2500); }}>Test Rank-up</Button>
+            </div>
           </CardContent>
         </Card>
       </div>
