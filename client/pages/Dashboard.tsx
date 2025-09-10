@@ -56,14 +56,14 @@ export default function Dashboard() {
           <AlertDialogContent>
             <AlertDialogHeader>
               <AlertDialogTitle className="flex items-center gap-2">Streak broken</AlertDialogTitle>
-              <AlertDialogDescription>
-                <div className="flex items-center gap-3 mt-2">
-                  <Mascot className="w-12 h-12" mood="sad" />
-                  <p>Oh no! It happens. Turn on reminders and do a quick mini-lesson to start a new streak.</p>
-                </div>
-              </AlertDialogDescription>
+              <div className="flex items-center gap-3 mt-2">
+                <Mascot className="w-12 h-12" mood="sad" />
+                <AlertDialogDescription>
+                  Oh no! It happens. Turn on reminders and do a quick mini-lesson to start a new streak.
+                </AlertDialogDescription>
+              </div>
             </AlertDialogHeader>
-            <AlertDialogAction onClick={() => { /* close */ }}>Got it</AlertDialogAction>
+            <AlertDialogAction>Got it</AlertDialogAction>
           </AlertDialogContent>
         </AlertDialog>
 
