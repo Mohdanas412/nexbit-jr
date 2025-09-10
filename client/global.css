@@ -116,6 +116,21 @@
   .animate-crown-glow { animation: crownGlow 1.4s ease-in-out infinite; }
   .animate-mascot-cheer { animation: mascot-cheer 0.9s ease-in-out infinite; }
   .animate-mascot-sad { animation: mascot-sad 1.6s ease-in-out infinite; }
+
+  /* Neon shadows for dark mode */
+  .shadow-neon { box-shadow: 0 0 12px hsl(201 94% 47% / .5), 0 0 24px hsl(224 100% 62% / .35); }
+  .glow-button { box-shadow: 0 6px 18px hsl(var(--primary)/.45); }
+
+  /* Tilt effect */
+  .tilt-card { transition: transform .2s ease, box-shadow .2s ease; }
+  .tilt-card:hover { transform: translateY(-4px) rotateZ(.25deg); }
+
+  /* Dark grid overlay */
+  .dark-grid-overlay { background-image: radial-gradient(circle at 1px 1px, #0ea5e933 1px, transparent 0); background-size: 24px 24px; opacity:.25; }
+
+  /* XP wave overlay for dark */
+  .xp-wave { position: relative; overflow: hidden; }
+  .xp-wave::after { content:""; position:absolute; inset:0; background: radial-gradient(ellipse at top, hsl(201 94% 47%/.25), transparent 40%), radial-gradient(ellipse at bottom, hsl(224 100% 62%/.2), transparent 40%); mix-blend: screen; animation: gradient-move 3s linear infinite; background-size: 200% 100%; }
 }
 
 @layer base {
