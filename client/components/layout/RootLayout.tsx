@@ -11,7 +11,8 @@ function bgByTime() {
 
 export default function RootLayout() {
   return (
-    <div className={`min-h-screen flex flex-col bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] ${bgByTime()}`}>
+    <div className={`relative min-h-screen flex flex-col bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] ${bgByTime()}`}>
+      <div className="hidden dark:block dark-grid-overlay absolute inset-0 pointer-events-none" />
       <SiteHeader />
       <main className="flex-1 animate-[fadeIn_.4s_ease]"><Outlet /></main>
       <SiteFooter />
