@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Switch } from "@/components/ui/switch";
 import { isSfxEnabled, setSfxEnabled } from "@/lib/sfx";
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 export default function SiteHeader() {
   const location = useLocation();
