@@ -43,6 +43,7 @@ export default function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
             <span>Sound</span>
             <Switch checked={sfx} onCheckedChange={(v) => { setSfx(v); setSfxEnabled(v); }} />
