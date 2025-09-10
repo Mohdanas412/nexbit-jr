@@ -11,9 +11,9 @@ export default function JourneyBar({ current, total }: { current: number; total:
   const checkpoints = Array.from({ length: total }, (_, i) => i + 1);
   return (
     <div className="relative">
-      <div className="h-3 rounded-full bg-muted overflow-hidden">
+      <div className="h-3 rounded-full bg-muted overflow-hidden dark:bg-[#0b1220]">
         <div
-          className={cn("h-full bg-gradient-to-r from-secondary to-primary xp-stripes", "transition-[width] duration-700 ease-out")}
+          className={cn("h-full bg-gradient-to-r from-secondary to-primary xp-stripes dark:xp-wave", "transition-[width] duration-700 ease-out")}
           style={{ width: `${w}%` }}
         />
       </div>
