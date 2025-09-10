@@ -17,7 +17,10 @@ export default function AuthPage() {
           <p className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-semibold">
             <Sparkles className="w-4 h-4" /> Join Nexbit Jr
           </p>
-          <h1 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight">Learning that feels like play</h1>
+          <div className="flex items-center gap-3 mt-2">
+            <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight">Learning that feels like play</h1>
+            <div className="hidden sm:block"><span className="sr-only">Mascot waving</span><svg width="0" height="0" /></div>
+          </div>
           <p className="text-muted-foreground mt-2 max-w-md">Create your account to track streaks, earn XP, and chat with the AI tutor. Google sign-in coming soon.</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li className="flex items-center gap-2"><ShieldCheck className="text-primary" /> Safe for students</li>
@@ -55,7 +58,7 @@ export default function AuthPage() {
                     <Input type="password" placeholder="••••••••" required />
                   </div>
                   <Button type="submit" className="w-full">Create account</Button>
-                  <Button type="button" variant="outline" className="w-full">Continue with Google</Button>
+                  <Button type="button" variant="outline" className="w-full hover:shadow-lg">Continue with Google</Button>
                   <p className="text-xs text-muted-foreground text-center">Supabase auth hooks will connect here.</p>
                 </form>
               </TabsContent>
