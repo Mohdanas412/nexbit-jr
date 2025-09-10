@@ -19,7 +19,7 @@ export default function AuthPage() {
           </p>
           <div className="flex items-center gap-3 mt-2">
             <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight">Learning that feels like play</h1>
-            <div className="hidden sm:block"><span className="sr-only">Mascot waving</span><svg width="0" height="0" /></div>
+            <div className="hidden sm:block"><Mascot className="w-14 h-14" mood="wave" /></div>
           </div>
           <p className="text-muted-foreground mt-2 max-w-md">Create your account to track streaks, earn XP, and chat with the AI tutor. Google sign-in coming soon.</p>
           <ul className="mt-4 space-y-2 text-sm">
