@@ -22,7 +22,7 @@ export default function LearningPage() {
     const ok = JSON.stringify(arr) === JSON.stringify(target);
     setChat([...chat, { role: "assistant", text: ok ? "Great job!" : "Almost there—remember to get input before printing." }]);
     setLessonDone(ok);
-    if (ok) playChime("confetti");
+    playChime(ok ? "confetti" : "buzz");
   }
 
   return (
