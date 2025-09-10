@@ -110,8 +110,10 @@
   @keyframes gradient-move { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
   @keyframes pulse-glow { 0%,100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.5);} 50% { box-shadow: 0 0 0 8px hsl(var(--accent) / 0.0);} }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: translateY(0);} }
+  @keyframes crownGlow { 0%,100% { filter: drop-shadow(0 0 0 hsl(45 98% 51%)); } 50% { filter: drop-shadow(0 0 10px hsl(45 98% 51%)); } }
 
   .animate-mascot-wave { animation: mascot-wave 1.2s ease-in-out infinite; }
+  .animate-crown-glow { animation: crownGlow 1.4s ease-in-out infinite; }
   .animate-mascot-cheer { animation: mascot-cheer 0.9s ease-in-out infinite; }
   .animate-mascot-sad { animation: mascot-sad 1.6s ease-in-out infinite; }
 }
