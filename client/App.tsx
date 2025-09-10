@@ -14,6 +14,7 @@ import Placeholder from "@/pages/Placeholder";
 import Dashboard from "@/pages/Dashboard";
 import LearningPage from "@/pages/Learning";
 import ProfilePage from "@/pages/Profile";
+import HabitPage from "@/pages/Habit";
 
 const queryClient = new QueryClient();
 
@@ -41,10 +42,7 @@ const App = () => (
               element={<Placeholder title="Pricing" description="Free plan details and upcoming Premium will appear here." />}
             />
             <Route path="/learning" element={<LearningPage />} />
-            <Route
-              path="/streaks"
-              element={<Placeholder title="Habits & Streaks" description="Calendar view and streak tracker will appear here." />}
-            />
+            <Route path="/streaks" element={<HabitPage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
