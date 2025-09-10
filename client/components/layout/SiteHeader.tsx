@@ -15,6 +15,8 @@ export default function SiteHeader() {
     { to: "/leaderboard", label: "Leaderboard" },
     { to: "/pricing", label: "Pricing" },
   ];
+  const [sfx, setSfx] = useState(true);
+  useEffect(() => { setSfx(isSfxEnabled()); }, []);
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b">
@@ -39,7 +41,11 @@ export default function SiteHeader() {
             </NavLink>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
+            <span>Sound</span>
+            <Switch checked={sfx} onCheckedChange={(v) => { setSfx(v); setSfxEnabled(v); }} />
+          </div>
           <Button asChild variant="ghost" className="hidden sm:inline-flex">
             <Link to="/auth">Sign in</Link>
           </Button>
