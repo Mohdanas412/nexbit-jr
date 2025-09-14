@@ -101,7 +101,7 @@ export default function Dashboard() {
               ))}
             </div>
             <div className="flex gap-2 mt-3">
-              <Button className="flex-1" size="sm"><Users className="mr-2" /> See full board</Button>
+              <Button asChild className="flex-1" size="sm"><Link to="/leaderboard"><Users className="mr-2" /> See full board</Link></Button>
               <Button variant="outline" size="sm" onClick={() => { setRankGlow(true); playChime("rank"); setTimeout(() => setRankGlow(false), 2500); }}>Test Rank-up</Button>
             </div>
           </CardContent>
