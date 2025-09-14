@@ -10,6 +10,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import RootLayout from "@/components/layout/RootLayout";
 import AuthPage from "@/pages/Auth";
+import BadgesPage from "@/pages/Badges";
+import LeaderboardPage from "@/pages/Leaderboard";
+import PricingPage from "@/pages/Pricing";
 import Placeholder from "@/pages/Placeholder";
 import Dashboard from "@/pages/Dashboard";
 import LearningPage from "@/pages/Learning";
@@ -29,18 +32,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route
-              path="/badges"
-              element={<Placeholder title="Badges" description="Your badge collection with locked/unlocked states will appear here." />}
-            />
-            <Route
-              path="/leaderboard"
-              element={<Placeholder title="Leaderboard" description="Global and class leaderboards will appear here." />}
-            />
-            <Route
-              path="/pricing"
-              element={<Placeholder title="Pricing" description="Free plan details and upcoming Premium will appear here." />}
-            />
+            <Route path="/badges" element={<BadgesPage />} />
+            <Route path="/leaderboard" element={<LeaderboardPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
             <Route path="/learning" element={<LearningPage />} />
             <Route path="/streaks" element={<HabitPage />} />
             <Route path="/profile" element={<ProfilePage />} />
