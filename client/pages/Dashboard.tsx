@@ -8,6 +8,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescript
 import { Crown, Sparkles, Users } from "lucide-react";
 import { useMemo, useState } from "react";
 import { playChime } from "@/lib/sfx";
+import { Link } from "react-router-dom";
 
 function greeting() {
   const h = new Date().getHours();
