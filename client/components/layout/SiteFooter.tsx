@@ -1,6 +1,6 @@
 export default function SiteFooter() {
   return (
-    <footer className="border-t bg-white/60">
+    <footer className="border-t bg-background/60">
       <div className="container py-10 grid gap-6 sm:grid-cols-2 md:grid-cols-4 text-sm">
         <div>
           <p className="font-extrabold text-lg">Nexbit Jr</p>

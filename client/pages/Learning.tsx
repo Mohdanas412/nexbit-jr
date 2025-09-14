@@ -60,7 +60,7 @@ export default function LearningPage() {
                   {blocks.map((b) => (
                     <div
                       key={b}
-                      className="cursor-grab rounded-lg bg-white border p-2 text-sm hover:shadow-md"
+                      className="cursor-grab rounded-lg bg-card border p-2 text-sm hover:shadow-md"
                       draggable
                       onDragStart={(e) => e.dataTransfer.setData("text", b)}
                     >
@@ -73,7 +73,7 @@ export default function LearningPage() {
                 <p className="text-xs font-semibold mb-2">Arrange here</p>
                 <div className="space-y-2 min-h-[140px]">
                   {arr.map((b, i) => (
-                    <div key={i} className="rounded-lg bg-white border p-2 text-sm">{b}</div>
+                    <div key={i} className="rounded-lg bg-card border p-2 text-sm">{b}</div>
                   ))}
                 </div>
               </div>

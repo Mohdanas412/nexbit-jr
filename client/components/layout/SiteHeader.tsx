@@ -20,7 +20,7 @@ export default function SiteHeader() {
   useEffect(() => { setSfx(isSfxEnabled()); }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b">
+    <header className="sticky top-0 z-40 w-full bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Mascot className="w-8 h-8" />
