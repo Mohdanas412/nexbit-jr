@@ -13,7 +13,6 @@ import AuthPage from "@/pages/Auth";
 import BadgesPage from "@/pages/Badges";
 import LeaderboardPage from "@/pages/Leaderboard";
 import PricingPage from "@/pages/Pricing";
-import Placeholder from "@/pages/Placeholder";
 import Dashboard from "@/pages/Dashboard";
 import LearningPage from "@/pages/Learning";
 import ProfilePage from "@/pages/Profile";
