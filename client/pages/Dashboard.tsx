@@ -4,7 +4,15 @@ import JourneyBar from "@/components/ui/journey-bar";
 import BadgesCarousel from "@/components/badges/BadgesCarousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Crown, Sparkles, Users } from "lucide-react";
 import { useMemo, useState } from "react";
 import { playChime } from "@/lib/sfx";
@@ -18,12 +26,15 @@ function greeting() {
 }
 
 export default function Dashboard() {
-  const badges = useMemo(() => [
-    { id: "b1", name: "First Lesson", unlocked: true },
-    { id: "b2", name: "7-Day Streak", unlocked: true },
-    { id: "b3", name: "Bug Fixer", unlocked: false },
-    { id: "b4", name: "Quiz Master", unlocked: false },
-  ], []);
+  const badges = useMemo(
+    () => [
+      { id: "b1", name: "First Lesson", unlocked: true },
+      { id: "b2", name: "7-Day Streak", unlocked: true },
+      { id: "b3", name: "Bug Fixer", unlocked: false },
+      { id: "b4", name: "Quiz Master", unlocked: false },
+    ],
+    [],
+  );
   const [rankGlow, setRankGlow] = useState(false);
 
   return (
@@ -33,7 +44,9 @@ export default function Dashboard() {
           <p className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-semibold">
             <Sparkles className="w-4 h-4" /> {greeting()}
           </p>
-          <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold">Welcome back to your journey</h1>
+          <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold">
+            Welcome back to your journey
+          </h1>
         </div>
         <Mascot className="w-20 h-20" mood={rankGlow ? "cheer" : "idle"} />
       </div>
@@ -46,21 +59,28 @@ export default function Dashboard() {
                 <p className="font-bold">Streak</p>
                 <StreakPill days={7} />
               </div>
-              <p className="text-sm text-muted-foreground mt-2">Keep practicing daily to grow your streak!</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Keep practicing daily to grow your streak!
+              </p>
               <div className="mt-3 flex gap-2">
                 <AlertDialogTrigger asChild>
-                  <Button variant="outline" size="sm">Missed a day?</Button>
+                  <Button variant="outline" size="sm">
+                    Missed a day?
+                  </Button>
                 </AlertDialogTrigger>
               </div>
             </CardContent>
           </Card>
           <AlertDialogContent>
             <AlertDialogHeader>
-              <AlertDialogTitle className="flex items-center gap-2">Streak broken</AlertDialogTitle>
+              <AlertDialogTitle className="flex items-center gap-2">
+                Streak broken
+              </AlertDialogTitle>
               <div className="flex items-center gap-3 mt-2">
                 <Mascot className="w-12 h-12" mood="sad" />
                 <AlertDialogDescription>
-                  Oh no! It happens. Turn on reminders and do a quick mini-lesson to start a new streak.
+                  Oh no! It happens. Turn on reminders and do a quick
+                  mini-lesson to start a new streak.
                 </AlertDialogDescription>
               </div>
             </AlertDialogHeader>
@@ -71,7 +91,9 @@ export default function Dashboard() {
         <Card className="shadow-md md:col-span-2">
           <CardContent className="p-5">
             <p className="font-bold">XP & Level</p>
-            <p className="text-sm text-muted-foreground">Level 3 • 140/200 XP</p>
+            <p className="text-sm text-muted-foreground">
+              Level 3 • 140/200 XP
+            </p>
             <div className="mt-3">
               <JourneyBar current={3} total={6} />
             </div>
@@ -84,26 +106,56 @@ export default function Dashboard() {
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
               <p className="font-bold">Badges</p>
-              <Button asChild size="sm" variant="outline"><Link to="/badges">View all</Link></Button>
+              <Button asChild size="sm" variant="outline">
+                <Link to="/badges">View all</Link>
+              </Button>
             </div>
             <BadgesCarousel badges={badges} />
           </CardContent>
         </Card>
         <Card className="shadow-md">
           <CardContent className="p-5">
-            <p className="font-bold flex items-center gap-2">Leaderboard <Crown className="text-accent" /></p>
-            <p className="text-xs text-muted-foreground">Rank up to earn a crown glow!</p>
+            <p className="font-bold flex items-center gap-2">
+              Leaderboard <Crown className="text-accent" />
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Rank up to earn a crown glow!
+            </p>
             <div className="mt-3 space-y-2 text-sm">
               {["Aisha", "Leo", "Maya", "You", "Kai"].map((n, i) => (
-                <div key={n} className={`rounded-lg p-2 flex items-center justify-between ${n === "You" ? "bg-primary/10 border border-primary glow-soft" : "bg-muted"}`}>
-                  <span className="font-semibold flex items-center gap-2">#{i + 1} {n} {n === "You" && rankGlow && <Crown className="text-accent animate-crown-glow" />}</span>
-                  <span className="text-muted-foreground">{200 - i * 15} XP</span>
+                <div
+                  key={n}
+                  className={`rounded-lg p-2 flex items-center justify-between ${n === "You" ? "bg-primary/10 border border-primary glow-soft" : "bg-muted"}`}
+                >
+                  <span className="font-semibold flex items-center gap-2">
+                    #{i + 1} {n}{" "}
+                    {n === "You" && rankGlow && (
+                      <Crown className="text-accent animate-crown-glow" />
+                    )}
+                  </span>
+                  <span className="text-muted-foreground">
+                    {200 - i * 15} XP
+                  </span>
                 </div>
               ))}
             </div>
             <div className="flex gap-2 mt-3">
-              <Button asChild className="flex-1" size="sm"><Link to="/leaderboard"><Users className="mr-2" /> See full board</Link></Button>
-              <Button variant="outline" size="sm" onClick={() => { setRankGlow(true); playChime("rank"); setTimeout(() => setRankGlow(false), 2500); }}>Test Rank-up</Button>
+              <Button asChild className="flex-1" size="sm">
+                <Link to="/leaderboard">
+                  <Users className="mr-2" /> See full board
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setRankGlow(true);
+                  playChime("rank");
+                  setTimeout(() => setRankGlow(false), 2500);
+                }}
+              >
+                Test Rank-up
+              </Button>
             </div>
           </CardContent>
         </Card>

@@ -17,14 +17,18 @@ export default function SiteHeader() {
     { to: "/pricing", label: "Pricing" },
   ];
   const [sfx, setSfx] = useState(true);
-  useEffect(() => { setSfx(isSfxEnabled()); }, []);
+  useEffect(() => {
+    setSfx(isSfxEnabled());
+  }, []);
 
   return (
     <header className="sticky top-0 z-40 w-full bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Mascot className="w-8 h-8" />
-          <span className="font-extrabold text-lg tracking-tight">Nexbit <span className="text-primary">Jr</span></span>
+          <span className="font-extrabold text-lg tracking-tight">
+            Nexbit <span className="text-primary">Jr</span>
+          </span>
         </Link>
         <nav className="hidden md:flex gap-6">
           {links.map((l) => (
@@ -34,7 +38,9 @@ export default function SiteHeader() {
               className={({ isActive }) =>
                 cn(
                   "text-sm font-semibold text-foreground/70 hover:text-foreground transition-colors",
-                  isActive || location.pathname === l.to ? "text-foreground" : undefined,
+                  isActive || location.pathname === l.to
+                    ? "text-foreground"
+                    : undefined,
                 )
               }
             >
@@ -46,7 +52,13 @@ export default function SiteHeader() {
           <ThemeToggle />
           <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
             <span>Sound</span>
-            <Switch checked={sfx} onCheckedChange={(v) => { setSfx(v); setSfxEnabled(v); }} />
+            <Switch
+              checked={sfx}
+              onCheckedChange={(v) => {
+                setSfx(v);
+                setSfxEnabled(v);
+              }}
+            />
           </div>
           <Button asChild variant="ghost" className="hidden sm:inline-flex">
             <Link to="/auth">Sign in</Link>

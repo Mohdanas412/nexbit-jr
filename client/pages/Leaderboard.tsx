@@ -1,6 +1,13 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import Mascot from "@/components/Mascot";
 import { Link } from "react-router-dom";
@@ -40,7 +47,9 @@ export default function LeaderboardPage() {
                 <TabsTrigger value="week">This Week</TabsTrigger>
                 <TabsTrigger value="all">All Time</TabsTrigger>
               </TabsList>
-              <Button asChild size="sm" variant="outline"><Link to="/dashboard">Back to dashboard</Link></Button>
+              <Button asChild size="sm" variant="outline">
+                <Link to="/dashboard">Back to dashboard</Link>
+              </Button>
             </div>
             <TabsContent value="week">
               <LeaderboardTable data={weekly} you="You" />
@@ -55,7 +64,13 @@ export default function LeaderboardPage() {
   );
 }
 
-function LeaderboardTable({ data, you }: { data: { name: string; xp: number }[]; you: string }) {
+function LeaderboardTable({
+  data,
+  you,
+}: {
+  data: { name: string; xp: number }[];
+  you: string;
+}) {
   return (
     <Table>
       <TableHeader>
@@ -67,9 +82,15 @@ function LeaderboardTable({ data, you }: { data: { name: string; xp: number }[];
       </TableHeader>
       <TableBody>
         {data.map((r, i) => (
-          <TableRow key={r.name} className={r.name === you ? "bg-primary/10" : undefined}>
+          <TableRow
+            key={r.name}
+            className={r.name === you ? "bg-primary/10" : undefined}
+          >
             <TableCell className="font-semibold">#{i + 1}</TableCell>
-            <TableCell className="font-semibold">{r.name}{r.name === you ? " (you)" : ""}</TableCell>
+            <TableCell className="font-semibold">
+              {r.name}
+              {r.name === you ? " (you)" : ""}
+            </TableCell>
             <TableCell className="text-right">{r.xp}</TableCell>
           </TableRow>
         ))}
