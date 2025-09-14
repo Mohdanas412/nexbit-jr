@@ -3,12 +3,19 @@ import { Toaster as Sonner } from "sonner";
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
-const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme();
+function getTheme(): ToasterProps["theme"] {
+  if (typeof document === "undefined" || typeof window === "undefined") return "light";
+  const saved = localStorage.getItem("nexbitjr_theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const isDark = saved ? saved === "dark" : prefersDark;
+  return isDark ? "dark" : "light";
+}
 
+const Toaster = ({ ...props }: ToasterProps) => {
+  const theme = getTheme();
   return (
     <Sonner
-      theme={theme as ToasterProps["theme"]}
+      theme={theme}
       className="toaster group"
       toastOptions={{
         classNames: {
