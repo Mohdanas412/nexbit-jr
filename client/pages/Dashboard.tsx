@@ -83,7 +83,7 @@ export default function Dashboard() {
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
               <p className="font-bold">Badges</p>
-              <Button size="sm" variant="outline">View all</Button>
+              <Button asChild size="sm" variant="outline"><Link to="/badges">View all</Link></Button>
             </div>
             <BadgesCarousel badges={badges} />
           </CardContent>
