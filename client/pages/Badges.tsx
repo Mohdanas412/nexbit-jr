@@ -6,11 +6,36 @@ import { Separator } from "@/components/ui/separator";
 import Mascot from "@/components/Mascot";
 import { Link } from "react-router-dom";
 
-const allBadges: { id: string; name: string; unlocked?: boolean; desc: string }[] = [
-  { id: "b1", name: "First Lesson", unlocked: true, desc: "Complete your first lesson" },
-  { id: "b2", name: "7-Day Streak", unlocked: true, desc: "Practice 7 days in a row" },
-  { id: "b3", name: "Bug Fixer", unlocked: false, desc: "Solve a debugging challenge" },
-  { id: "b4", name: "Quiz Master", unlocked: false, desc: "Score 100% on a quiz" },
+const allBadges: {
+  id: string;
+  name: string;
+  unlocked?: boolean;
+  desc: string;
+}[] = [
+  {
+    id: "b1",
+    name: "First Lesson",
+    unlocked: true,
+    desc: "Complete your first lesson",
+  },
+  {
+    id: "b2",
+    name: "7-Day Streak",
+    unlocked: true,
+    desc: "Practice 7 days in a row",
+  },
+  {
+    id: "b3",
+    name: "Bug Fixer",
+    unlocked: false,
+    desc: "Solve a debugging challenge",
+  },
+  {
+    id: "b4",
+    name: "Quiz Master",
+    unlocked: false,
+    desc: "Score 100% on a quiz",
+  },
   { id: "b5", name: "Early Bird", unlocked: false, desc: "Study before 9am" },
   { id: "b6", name: "Night Owl", unlocked: false, desc: "Study after 9pm" },
 ];
@@ -33,7 +58,9 @@ export default function BadgesPage() {
         <CardContent className="p-5">
           <div className="flex items-center justify-between">
             <p className="font-bold">Recent badges</p>
-            <Button asChild size="sm" variant="outline"><Link to="/learning">Earn more</Link></Button>
+            <Button asChild size="sm" variant="outline">
+              <Link to="/learning">Earn more</Link>
+            </Button>
           </div>
           <BadgesCarousel badges={allBadges} />
         </CardContent>
@@ -45,7 +72,10 @@ export default function BadgesPage() {
             <p className="font-bold mb-2">Unlocked ({unlocked.length})</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {unlocked.map((b) => (
-                <div key={b.id} className="rounded-lg border p-3 bg-primary/5 dark:bg-primary/15 dark:border-primary/30 dark:shadow-[0_0_6px_hsl(135_100%_40%_/_0.2)]">
+                <div
+                  key={b.id}
+                  className="rounded-lg border p-3 bg-primary/5 dark:bg-primary/15 dark:border-primary/30 dark:shadow-[0_0_6px_hsl(135_100%_40%_/_0.2)]"
+                >
                   <div className="flex items-center justify-between">
                     <span className="font-semibold">{b.name}</span>
                     <Badge variant="secondary">Unlocked</Badge>
@@ -61,7 +91,10 @@ export default function BadgesPage() {
             <p className="font-bold mb-2">Locked ({locked.length})</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {locked.map((b) => (
-                <div key={b.id} className="rounded-lg border p-3 bg-muted dark:bg-[#1E1E2F] dark:border-[#2A2A3A]">
+                <div
+                  key={b.id}
+                  className="rounded-lg border p-3 bg-muted dark:bg-[#1E1E2F] dark:border-[#2A2A3A]"
+                >
                   <div className="flex items-center justify-between">
                     <span className="font-semibold">{b.name}</span>
                     <Badge variant="outline">Locked</Badge>
@@ -77,9 +110,13 @@ export default function BadgesPage() {
       <Separator className="my-8" />
 
       <div className="text-center">
-        <p className="text-sm text-muted-foreground">Tip: Do a quick mini-lesson to unlock more.</p>
+        <p className="text-sm text-muted-foreground">
+          Tip: Do a quick mini-lesson to unlock more.
+        </p>
         <div className="mt-3">
-          <Button asChild size="lg"><Link to="/learning">Start a mini-lesson</Link></Button>
+          <Button asChild size="lg">
+            <Link to="/learning">Start a mini-lesson</Link>
+          </Button>
         </div>
       </div>
     </section>
