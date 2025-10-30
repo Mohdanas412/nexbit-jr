@@ -4,7 +4,9 @@ export default function SiteFooter() {
       <div className="container py-10 grid gap-6 sm:grid-cols-2 md:grid-cols-4 text-sm">
         <div>
           <p className="font-extrabold text-lg">Nexbit Jr</p>
-          <p className="text-muted-foreground mt-2 max-w-xs">Make coding a habit. Learn step by step, playfully.</p>
+          <p className="text-muted-foreground mt-2 max-w-xs">
+            Make coding a habit. Learn step by step, playfully.
+          </p>
         </div>
         <div>
           <p className="font-semibold mb-2">Product</p>
@@ -29,7 +31,9 @@ export default function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t py-4 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} Nexbit Jr</div>
+      <div className="border-t py-4 text-center text-xs text-muted-foreground">
+        © {new Date().getFullYear()} Nexbit Jr
+      </div>
     </footer>
   );
 }
