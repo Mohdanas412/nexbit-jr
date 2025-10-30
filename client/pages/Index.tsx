@@ -79,7 +79,7 @@ export default function Index() {
           ].map((f) => (
             <Card key={f.title} className="border-2 border-muted dark:border-[#1E1E2F] dark:dark-card-glow hover:border-primary/40 dark:hover:border-primary/60 transition-colors">
               <CardContent className="p-6">
-                <div className="w-10 h-10 rounded-full bg-primary/10 grid place-items-center mb-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 grid place-items-center mb-3">
                   {f.icon}
                 </div>
                 <h3 className="font-bold text-lg">{f.title}</h3>
