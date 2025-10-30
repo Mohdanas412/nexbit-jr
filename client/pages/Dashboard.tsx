@@ -30,8 +30,8 @@ export default function Dashboard() {
     <section className="container py-10">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-semibold">
-            <Sparkles className="w-4 h-4" /> {greeting()}
+          <p className="inline-flex items-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:drop-shadow-[0_0_4px_hsl(135_100%_40%)] px-3 py-1 text-sm font-semibold">
+            <Sparkles className="w-4 h-4 dark:drop-shadow-[0_0_3px_hsl(135_100%_40%)]" /> {greeting()}
           </p>
           <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold">Welcome back to your journey</h1>
         </div>
