@@ -40,7 +40,7 @@ export default function Dashboard() {
 
       <div className="grid md:grid-cols-3 gap-4 mt-6">
         <AlertDialog>
-          <Card className="shadow-md">
+          <Card className="shadow-md dark:dark-card-glow dark:shadow-none">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <p className="font-bold">Streak</p>
