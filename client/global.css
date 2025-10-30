@@ -65,41 +65,46 @@
   }
 
   .dark {
-    --background: 222.2 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 217 66% 11%;
+    --foreground: 0 0% 92%;
 
-    --card: 222.2 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 7% 18%;
+    --card-foreground: 0 0% 92%;
 
-    --popover: 222.2 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 7% 18%;
+    --popover-foreground: 0 0% 92%;
 
-    --primary: 142 70% 45%;
-    --primary-foreground: 0 0% 8%;
+    /* Brand colors with enhanced saturation for dark mode glow */
+    --primary: 135 100% 40%;
+    --primary-foreground: 240 7% 18%;
 
-    --secondary: 201 94% 47%;
-    --secondary-foreground: 0 0% 0%;
+    /* Vibrant blue remains bright for dark backgrounds */
+    --secondary: 192 100% 47%;
+    --secondary-foreground: 240 7% 18%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 70.1%;
+    /* Muted surfaces for dark mode */
+    --muted: 240 7% 25%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 45 98% 51%;
-    --accent-foreground: 222.2 47% 6%;
+    /* Sunny accent yellow with enhanced brightness */
+    --accent: 45 100% 50%;
+    --accent-foreground: 240 7% 18%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 0 0% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 142 70% 45%;
-    --sidebar-background: 222.2 47% 6%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 142 70% 45%;
-    --sidebar-primary-foreground: 0 0% 8%;
-    --sidebar-accent: 45 98% 51%;
-    --sidebar-accent-foreground: 222.2 47% 6%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 142 70% 45%;
+    --border: 240 7% 28%;
+    --input: 240 7% 25%;
+    --ring: 135 100% 40%;
+
+    --sidebar-background: 217 66% 11%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 135 100% 40%;
+    --sidebar-primary-foreground: 240 7% 18%;
+    --sidebar-accent: 45 100% 50%;
+    --sidebar-accent-foreground: 240 7% 18%;
+    --sidebar-border: 240 7% 28%;
+    --sidebar-ring: 135 100% 40%;
   }
 
   /* Fun animations */
@@ -118,7 +123,7 @@
   .animate-mascot-sad { animation: mascot-sad 1.6s ease-in-out infinite; }
 
   /* Neon shadows for dark mode */
-  .shadow-neon { box-shadow: 0 0 12px hsl(201 94% 47% / .5), 0 0 24px hsl(224 100% 62% / .35); }
+  .shadow-neon { box-shadow: 0 0 12px hsl(135 100% 40% / .5), 0 0 24px hsl(192 100% 47% / .35); }
   .glow-button { box-shadow: 0 6px 18px hsl(var(--primary)/.45); }
 
   /* Tilt effect */
@@ -126,20 +131,28 @@
   .tilt-card:hover { transform: translateY(-4px) rotateZ(.25deg); }
 
   /* Dark grid overlay */
-  .dark-grid-overlay { background-image: radial-gradient(circle at 1px 1px, #0ea5e933 1px, transparent 0); background-size: 24px 24px; opacity:.25; }
+  .dark-grid-overlay { background-image: radial-gradient(circle at 1px 1px, hsl(135 100% 40% / 0.15) 1px, transparent 0); background-size: 24px 24px; opacity:.3; }
 
   /* XP wave overlay for dark */
   .xp-wave { position: relative; overflow: hidden; }
-  .xp-wave::after { content:""; position:absolute; inset:0; background: radial-gradient(ellipse at top, hsl(201 94% 47%/.25), transparent 40%), radial-gradient(ellipse at bottom, hsl(224 100% 62%/.2), transparent 40%); mix-blend: screen; animation: gradient-move 3s linear infinite; background-size: 200% 100%; }
+  .xp-wave::after { content:""; position:absolute; inset:0; background: radial-gradient(ellipse at top, hsl(135 100% 40%/.2), transparent 40%), radial-gradient(ellipse at bottom, hsl(192 100% 47%/.15), transparent 40%); mix-blend: screen; animation: gradient-move 3s linear infinite; background-size: 200% 100%; }
+
+  /* Dark mode card glow */
+  .dark .dark-card-glow { box-shadow: 0 0 1px hsl(135 100% 40% / 0.3), inset 0 1px 0 hsl(0 0% 100% / 0.1); }
 }
 
 @layer base {
+  html {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
   }
 
   /* XP progress stripe */
