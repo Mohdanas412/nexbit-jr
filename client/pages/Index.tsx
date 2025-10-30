@@ -124,13 +124,13 @@ export default function Index() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="shadow-md">
+            <Card className="shadow-md dark:dark-card-glow">
               <CardContent className="p-5">
                 <p className="font-bold">Badges</p>
                 <p className="text-sm text-muted-foreground">First Lesson • 7-Day Streak</p>
               </CardContent>
             </Card>
-            <Card className="shadow-md">
+            <Card className="shadow-md dark:dark-card-glow">
               <CardContent className="p-5">
                 <p className="font-bold">Leaderboard</p>
                 <p className="text-sm text-muted-foreground">Top 5 this week</p>
