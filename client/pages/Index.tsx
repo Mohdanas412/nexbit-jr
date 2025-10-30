@@ -106,21 +106,21 @@ export default function Index() {
             </div>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Card className="shadow-md">
+            <Card className="shadow-md dark:dark-card-glow">
               <CardContent className="p-5">
                 <p className="font-bold">Daily Task</p>
                 <p className="text-sm text-muted-foreground">Lesson 1 of 5 today</p>
-                <div className="mt-4 h-2 rounded bg-muted">
-                  <div className="h-2 rounded bg-primary w-2/5" />
+                <div className="mt-4 h-2 rounded bg-muted dark:bg-[#1E1E2F]">
+                  <div className="h-2 rounded bg-primary w-2/5 dark:shadow-[0_0_8px_hsl(135_100%_40%_/_0.6)]" />
                 </div>
               </CardContent>
             </Card>
-            <Card className="shadow-md">
+            <Card className="shadow-md dark:dark-card-glow">
               <CardContent className="p-5">
                 <p className="font-bold">XP</p>
                 <p className="text-sm text-muted-foreground">Level 2 • 120/200 XP</p>
-                <div className="mt-4 h-2 rounded bg-muted">
-                  <div className="h-2 rounded bg-secondary w-3/5" />
+                <div className="mt-4 h-2 rounded bg-muted dark:bg-[#1E1E2F]">
+                  <div className="h-2 rounded bg-secondary w-3/5 dark:shadow-[0_0_8px_hsl(192_100%_47%_/_0.5)]" />
                 </div>
               </CardContent>
             </Card>
