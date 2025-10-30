@@ -95,8 +95,8 @@ export default function Dashboard() {
             <p className="text-xs text-muted-foreground">Rank up to earn a crown glow!</p>
             <div className="mt-3 space-y-2 text-sm">
               {["Aisha", "Leo", "Maya", "You", "Kai"].map((n, i) => (
-                <div key={n} className={`rounded-lg p-2 flex items-center justify-between ${n === "You" ? "bg-primary/10 border border-primary glow-soft" : "bg-muted"}`}>
-                  <span className="font-semibold flex items-center gap-2">#{i + 1} {n} {n === "You" && rankGlow && <Crown className="text-accent animate-crown-glow" />}</span>
+                <div key={n} className={`rounded-lg p-2 flex items-center justify-between ${n === "You" ? "bg-primary/10 dark:bg-primary/20 border border-primary dark:border-primary/60 dark:shadow-[0_0_8px_hsl(135_100%_40%_/_0.3)] glow-soft" : "bg-muted dark:bg-[#1E1E2F]"}`}>
+                  <span className="font-semibold flex items-center gap-2">#{i + 1} {n} {n === "You" && rankGlow && <Crown className="text-accent dark:drop-shadow-[0_0_6px_hsl(45_100%_50%)] animate-crown-glow" />}</span>
                   <span className="text-muted-foreground">{200 - i * 15} XP</span>
                 </div>
               ))}
