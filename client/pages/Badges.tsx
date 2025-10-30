@@ -29,7 +29,7 @@ export default function BadgesPage() {
         <Mascot className="w-16 h-16" mood="happy" />
       </div>
 
-      <Card className="shadow-md mt-6">
+      <Card className="shadow-md dark:dark-card-glow dark:shadow-none mt-6">
         <CardContent className="p-5">
           <div className="flex items-center justify-between">
             <p className="font-bold">Recent badges</p>
@@ -40,7 +40,7 @@ export default function BadgesPage() {
       </Card>
 
       <div className="grid md:grid-cols-2 gap-4 mt-6">
-        <Card className="shadow-md">
+        <Card className="shadow-md dark:dark-card-glow dark:shadow-none">
           <CardContent className="p-5">
             <p className="font-bold mb-2">Unlocked ({unlocked.length})</p>
             <div className="grid sm:grid-cols-2 gap-3">
