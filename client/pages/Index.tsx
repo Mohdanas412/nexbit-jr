@@ -97,9 +97,9 @@ export default function Index() {
             <h2 className="text-2xl sm:text-3xl font-extrabold">Short lessons, streaks, and XP</h2>
             <p className="text-muted-foreground mt-2">Practice a little every day. Keep your streak alive, collect badges, and climb the leaderboard.</p>
             <ul className="mt-4 space-y-2 text-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary" /> 5-minute micro-lessons</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary" /> Fun multiple-choice and tiny coding puzzles</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary" /> Hints powered by AI tutor</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary dark:drop-shadow-[0_0_4px_hsl(135_100%_40%)]" /> 5-minute micro-lessons</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary dark:drop-shadow-[0_0_4px_hsl(135_100%_40%)]" /> Fun multiple-choice and tiny coding puzzles</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary dark:drop-shadow-[0_0_4px_hsl(135_100%_40%)]" /> Hints powered by AI tutor</li>
             </ul>
             <div className="mt-6">
               <Button asChild size="lg"><Link to="/auth">Join Free Today</Link></Button>
