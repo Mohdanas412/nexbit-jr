@@ -41,18 +41,18 @@ export default function Index() {
           <div className="flex justify-center md:justify-end">
             <div className="relative">
               <Mascot className="w-56 h-56 md:w-72 md:h-72" />
-              <Card className="absolute -bottom-4 -right-6 rotate-3 shadow-xl">
+              <Card className="absolute -bottom-4 -right-6 rotate-3 shadow-xl dark:dark-card-glow dark:shadow-none">
                 <CardContent className="p-4 flex items-center gap-3">
-                  <Flame className="text-accent" />
+                  <Flame className="text-accent dark:drop-shadow-[0_0_4px_hsl(45_100%_50%)]" />
                   <div>
                     <p className="text-sm font-bold leading-none">7-day streak</p>
                     <p className="text-xs text-muted-foreground">Keep it up!</p>
                   </div>
                 </CardContent>
               </Card>
-              <Card className="absolute -top-4 -left-6 -rotate-3 shadow-xl">
+              <Card className="absolute -top-4 -left-6 -rotate-3 shadow-xl dark:dark-card-glow dark:shadow-none">
                 <CardContent className="p-4 flex items-center gap-3">
-                  <Trophy className="text-primary" />
+                  <Trophy className="text-primary dark:drop-shadow-[0_0_4px_hsl(135_100%_40%)]" />
                   <div>
                     <p className="text-sm font-bold leading-none">+50 XP</p>
                     <p className="text-xs text-muted-foreground">Lesson complete</p>
