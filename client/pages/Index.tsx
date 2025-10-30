@@ -91,7 +91,7 @@ export default function Index() {
       </section>
 
       {/* Why it's fun */}
-      <section className="py-14 bg-gradient-to-b from-white to-accent/20">
+      <section className="py-14 bg-gradient-to-b from-white to-accent/20 dark:from-[#1C1C28] dark:to-[#1C1C28]/60">
         <div className="container grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-2xl sm:text-3xl font-extrabold">Short lessons, streaks, and XP</h2>
