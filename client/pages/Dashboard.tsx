@@ -68,7 +68,7 @@ export default function Dashboard() {
           </AlertDialogContent>
         </AlertDialog>
 
-        <Card className="shadow-md md:col-span-2">
+        <Card className="shadow-md dark:dark-card-glow dark:shadow-none md:col-span-2">
           <CardContent className="p-5">
             <p className="font-bold">XP & Level</p>
             <p className="text-sm text-muted-foreground">Level 3 • 140/200 XP</p>
@@ -80,7 +80,7 @@ export default function Dashboard() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-4 mt-4">
-        <Card className="shadow-md md:col-span-2">
+        <Card className="shadow-md dark:dark-card-glow dark:shadow-none md:col-span-2">
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
               <p className="font-bold">Badges</p>
@@ -89,7 +89,7 @@ export default function Dashboard() {
             <BadgesCarousel badges={badges} />
           </CardContent>
         </Card>
-        <Card className="shadow-md">
+        <Card className="shadow-md dark:dark-card-glow dark:shadow-none">
           <CardContent className="p-5">
             <p className="font-bold flex items-center gap-2">Leaderboard <Crown className="text-accent" /></p>
             <p className="text-xs text-muted-foreground">Rank up to earn a crown glow!</p>
