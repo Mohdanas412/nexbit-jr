@@ -9,8 +9,8 @@ export default function Index() {
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-accent/40 rounded-full blur-3xl" />
-        <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute -top-24 -right-24 w-72 h-72 bg-accent/40 dark:bg-accent/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-primary/20 dark:bg-primary/15 rounded-full blur-3xl" />
         <div className="container py-16 grid md:grid-cols-2 gap-10 items-center">
           <div className="text-center md:text-left">
             <p className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-semibold">
