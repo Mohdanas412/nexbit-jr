@@ -32,7 +32,7 @@ export default function LeaderboardPage() {
         <Mascot className="w-16 h-16" mood="cheer" />
       </div>
 
-      <Card className="shadow-md mt-6">
+      <Card className="shadow-md dark:dark-card-glow dark:shadow-none mt-6">
         <CardContent className="p-5">
           <Tabs defaultValue="week">
             <div className="flex items-center justify-between mb-3">
