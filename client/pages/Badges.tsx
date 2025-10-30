@@ -45,7 +45,7 @@ export default function BadgesPage() {
             <p className="font-bold mb-2">Unlocked ({unlocked.length})</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {unlocked.map((b) => (
-                <div key={b.id} className="rounded-lg border p-3 bg-primary/5">
+                <div key={b.id} className="rounded-lg border p-3 bg-primary/5 dark:bg-primary/15 dark:border-primary/30 dark:shadow-[0_0_6px_hsl(135_100%_40%_/_0.2)]">
                   <div className="flex items-center justify-between">
                     <span className="font-semibold">{b.name}</span>
                     <Badge variant="secondary">Unlocked</Badge>
@@ -56,12 +56,12 @@ export default function BadgesPage() {
             </div>
           </CardContent>
         </Card>
-        <Card className="shadow-md">
+        <Card className="shadow-md dark:dark-card-glow dark:shadow-none">
           <CardContent className="p-5">
             <p className="font-bold mb-2">Locked ({locked.length})</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {locked.map((b) => (
-                <div key={b.id} className="rounded-lg border p-3 bg-muted">
+                <div key={b.id} className="rounded-lg border p-3 bg-muted dark:bg-[#1E1E2F] dark:border-[#2A2A3A]">
                   <div className="flex items-center justify-between">
                     <span className="font-semibold">{b.name}</span>
                     <Badge variant="outline">Locked</Badge>
