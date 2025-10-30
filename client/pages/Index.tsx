@@ -70,14 +70,14 @@ export default function Index() {
         <p className="text-center text-muted-foreground mt-2 max-w-2xl mx-auto">Bite-sized lessons, gamified rewards, and an AI tutor always ready to help.</p>
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { icon: <Zap className="text-primary" />, title: "AI Tutor", desc: "Ask questions and get friendly, step-by-step help." },
-            { icon: <Flame className="text-accent" />, title: "Daily Habit", desc: "Keep your streak alive with short, fun lessons." },
-            { icon: <Trophy className="text-secondary" />, title: "Badges & XP", desc: "Earn badges and level up as you learn." },
-            { icon: <Users className="text-primary" />, title: "Leaderboard", desc: "See how you rank with friends and classmates." },
-            { icon: <Sparkles className="text-accent" />, title: "Micro Lessons", desc: "Multiple-choice quizzes and tiny puzzles." },
-            { icon: <CheckCircle2 className="text-primary" />, title: "Ready for Backend", desc: "UI prepared for Supabase + OpenAI integration." },
+            { icon: <Zap className="text-primary dark:drop-shadow-[0_0_6px_hsl(135_100%_40%)]" />, title: "AI Tutor", desc: "Ask questions and get friendly, step-by-step help." },
+            { icon: <Flame className="text-accent dark:drop-shadow-[0_0_6px_hsl(45_100%_50%)]" />, title: "Daily Habit", desc: "Keep your streak alive with short, fun lessons." },
+            { icon: <Trophy className="text-secondary dark:drop-shadow-[0_0_6px_hsl(192_100%_47%)]" />, title: "Badges & XP", desc: "Earn badges and level up as you learn." },
+            { icon: <Users className="text-primary dark:drop-shadow-[0_0_6px_hsl(135_100%_40%)]" />, title: "Leaderboard", desc: "See how you rank with friends and classmates." },
+            { icon: <Sparkles className="text-accent dark:drop-shadow-[0_0_6px_hsl(45_100%_50%)]" />, title: "Micro Lessons", desc: "Multiple-choice quizzes and tiny puzzles." },
+            { icon: <CheckCircle2 className="text-primary dark:drop-shadow-[0_0_6px_hsl(135_100%_40%)]" />, title: "Ready for Backend", desc: "UI prepared for Supabase + OpenAI integration." },
           ].map((f) => (
-            <Card key={f.title} className="border-2 border-muted hover:border-primary/40 transition-colors">
+            <Card key={f.title} className="border-2 border-muted dark:border-[#1E1E2F] dark:dark-card-glow hover:border-primary/40 dark:hover:border-primary/60 transition-colors">
               <CardContent className="p-6">
                 <div className="w-10 h-10 rounded-full bg-primary/10 grid place-items-center mb-3">
                   {f.icon}
