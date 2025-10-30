@@ -14,14 +14,14 @@
           if (saved === "light" || saved === "dark") {
             isDark = saved === "dark";
           } else {
-            isDark = true;
+            isDark = false;
           }
           var root = document.documentElement;
           if (isDark) {
             root.classList.add("dark");
-            if (!saved) localStorage.setItem(k, "dark");
           } else {
             root.classList.remove("dark");
+            if (!saved) localStorage.setItem(k, "light");
           }
         } catch (e) {}
       })();
